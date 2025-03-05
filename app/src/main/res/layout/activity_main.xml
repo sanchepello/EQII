@@ -1,101 +1,139 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main">
+    android:background="@android:color/white"
+    android:padding="16dp">
 
-    <!-- Название приложения -->
-    <TextView
-        android:id="@+id/appTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Калькулятор Калорий"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <!-- Дата (мини-календарь) -->
-    <TextView
-        android:id="@+id/currentDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Сегодня: 4 марта 2025"
-        android:textSize="16sp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/appTitle"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <!-- Блок с общей инфой по калориям и БЖУ -->
     <LinearLayout
-        android:id="@+id/nutritionSummary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/currentDate"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        android:orientation="vertical">
 
+        <!-- Название приложения -->
         <TextView
-            android:id="@+id/calories"
-            android:layout_width="0dp"
+            android:id="@+id/appTitle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Калории: 0 ккал"
-            android:layout_weight="1"
-            android:textSize="18sp"/>
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:text="Калькулятор Калорий"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
+        <!-- Дата (мини-календарь) -->
         <TextView
-            android:id="@+id/proteins"
-            android:layout_width="0dp"
+            android:id="@+id/currentDateText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Белки: 0 г"
-            android:layout_weight="1"
-            android:textSize="18sp"/>
+            android:layout_marginBottom="10dp"
+            android:text="Сегодня: "
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/fats"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Жиры: 0 г"
-            android:layout_weight="1"
-            android:textSize="18sp"/>
 
-        <TextView
-            android:id="@+id/carbs"
-            android:layout_width="0dp"
+        <!-- Кнопка "Добавить приём пищи" -->
+        <Button
+            android:id="@+id/addMealButton"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Углеводы: 0 г"
-            android:layout_weight="1"
-            android:textSize="18sp"/>
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/buttonColor"
+            android:text="Добавить приём пищи"
+            android:textColor="@android:color/white" />
+
+        <!-- Блок с прогресс-барами -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <!-- Белки -->
+            <TextView
+                android:id="@+id/proteinText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Белки: 0/100 г"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <ProgressBar
+                android:id="@+id/proteinProgress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginBottom="16dp"
+                android:max="100"
+                android:progressDrawable="@drawable/progress_protein" />
+
+            <!-- Жиры -->
+            <TextView
+                android:id="@+id/fatText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Жиры: 0/60 г"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <ProgressBar
+                android:id="@+id/fatProgress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginBottom="16dp"
+                android:max="60"
+                android:progressDrawable="@drawable/progress_fat" />
+
+            <!-- Углеводы -->
+            <TextView
+                android:id="@+id/carbText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Углеводы: 0/250 г"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <ProgressBar
+                android:id="@+id/carbProgress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginBottom="16dp"
+                android:max="250"
+                android:progressDrawable="@drawable/progress_carb" />
+
+            <!-- Калории -->
+            <TextView
+                android:id="@+id/calorieText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Калории: 0/2000 ккал"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <ProgressBar
+                android:id="@+id/calorieProgress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginBottom="16dp"
+                android:max="2000"
+                android:progressDrawable="@drawable/progress_calorie" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/mealsListView"
+            android:layout_width="match_parent"
+            android:layout_height="298dp"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="1dp" />
+
     </LinearLayout>
-
-    <!-- Кнопка "Добавить приём пищи" -->
-    <Button
-        android:id="@+id/addMealButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Добавить приём пищи"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/nutritionSummary"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <!-- Список приёмов пищи -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mealList"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/addMealButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

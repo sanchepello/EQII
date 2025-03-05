@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Основные цвета -->
+    <color name="colorPrimary">#FFFFFF</color> <!-- Белый, если хочешь другой фон, поменяй -->
+    <color name="colorPrimaryDark">#F5F5F5</color> <!-- Светло-серый, чтобы статус-бар не был фиолетовым -->
+    <color name="colorAccent">#FF9800</color> <!-- Оранжевый (можно поменять на другой) -->
+
+    <!-- Цвета текста -->
+    <color name="textPrimary">#212121</color> <!-- Основной цвет текста (тёмно-серый) -->
+    <color name="textSecondary">#757575</color> <!-- Вторичный цвет текста (серый) -->
+
+    <!--Цвет кнопки-->
+    <color name="buttonColor">#000000</color> <!-- Черный цвет кнопки-->
+
+    <!-- Фоновые цвета -->
+    <color name="backgroundColor">#FFFFFF</color> <!-- Фон приложения -->
+    <color name="cardBackground">#F5F5F5</color> <!-- Фон карточек (если понадобится) -->
+
+    <!-- Цвета для графиков -->
+    <color name="chartProtein">#4CAF50</color> <!-- Зелёный -->
+    <color name="chartFat">#FFEB3B</color> <!-- Жёлтый -->
+    <color name="chartCarbs">#FF5722</color> <!-- Оранжево-красный -->
 </resources>

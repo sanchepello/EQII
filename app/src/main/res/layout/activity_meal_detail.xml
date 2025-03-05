@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Название приёма пищи -->
+    <TextView
+        android:id="@+id/mealNameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Приём пищи"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Список продуктов в приёме пищи -->
+    <ListView
+        android:id="@+id/productListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"/>
+
+    <!-- Итоговое количество калорий и БЖУ -->
+    <TextView
+        android:id="@+id/mealSummaryText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Всего: 0 ккал | Б: 0 г | Ж: 0 г | У: 0 г"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

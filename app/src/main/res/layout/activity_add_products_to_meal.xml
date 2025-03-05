@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Обычный список продуктов -->
+    <ListView
+        android:id="@+id/productListView"
+        android:layout_width="match_parent"
+        android:layout_height="562dp" />
+
+    <!-- Скрытый экран добавления нового продукта -->
+
+    <Button
+        android:id="@+id/addNewProductButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/buttonColor"
+        android:text="Добавить новый продукт"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/addSelectedProductsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/buttonColor"
+        android:text="Выбрать продукты"
+        android:textColor="@android:color/white" />
+
+    <LinearLayout
+        android:id="@+id/addProductLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="gone"> <!-- Скрываем по умолчанию -->
+
+        <EditText
+            android:id="@+id/productNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Название продукта" />
+
+        <EditText
+            android:id="@+id/caloriesInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Калории" />
+
+        <EditText
+            android:id="@+id/proteinInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Белки (г)" />
+
+        <EditText
+            android:id="@+id/fatInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Жиры (г)" />
+
+        <EditText
+            android:id="@+id/carbsInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Углеводы (г)" />
+
+        <Button
+            android:id="@+id/saveProductButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/buttonColor"
+            android:text="Сохранить продукт"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</LinearLayout>

@@ -5,7 +5,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "androidx.room:room-gradle-plugin:2.6.1"
+        classpath libs.androidx.room.gradle.plugin
     }
 }
 

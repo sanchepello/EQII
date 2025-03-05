@@ -29,8 +29,9 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.room:room-runtime:2.6.1'
-    annotationProcessor 'androidx.room:room-compiler:2.6.1' // Для Java
+    implementation libs.room.runtime
+    annotationProcessor libs.room.compiler // Для Java
+    implementation libs.mpandroidchart
     implementation libs.appcompat
     implementation libs.material
     testImplementation libs.junit
